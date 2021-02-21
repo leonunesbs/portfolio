@@ -23,8 +23,8 @@ const Home: React.FC = () => {
               <Image src='pp.jpg' alt='pp' boxSize={['260px', "330px"]} borderRadius='full' zIndex='100' borderColor='brand.500' borderWidth='25px' />
             </Flex>
             <Flex backgroundColor='brand.300' w={['300px', '400px']} h={['380px', '400px']} mt='-180px' pt='190px' pb='10px' shadow='md' zIndex='50' borderRadius='md' flexDir='column' textAlign='center' align='center' >
-              <Heading color='brand.100' fontWeight='ligth'>LEONARDO NUNES</Heading>
-              <Text color='brand.500'>acadêmico de medicina</Text>
+              <Heading color='brand.100' as='h1' fontWeight='ligth'>LEONARDO NUNES</Heading>
+              <Text color='brand.500' as='h4'>acadêmico de medicina</Text>
               <Stack flexGrow={1} align='center' isInline spacing={8}>
                 <Link href='https://instagram.com/leonunesbs' isExternal>
                   <Icon as={FiInstagram} color='brand.100' w={[6, 10]} h={[6, 10]} _hover={{color:'brand.500'}}/>
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
         </Flex>
         <Flex w='100%' wrap={['wrap', 'initial']}>
           <Flex flexDir='column' flexGrow={1} mb={4} minW='50%'>
-            <Heading color='brand.100' fontWeight='light' as='h4' mb={2}>dados pessoais</Heading>
+            <Heading color='brand.100' fontWeight='light' as='h2' mb={2}>dados pessoais</Heading>
             <Flex flexDir='column'>
               <DadosPessoais title='idade' dado='23 anos'/>
               <DadosPessoais title='whatsapp' dado='+55 86 9 8131 2488'/>
@@ -59,7 +59,7 @@ const Home: React.FC = () => {
             </Flex>
           </Flex>
           <Flex flexDir='column' flexGrow={1} mb={4}>
-            <Heading color='brand.100' fontWeight='light' as='h4' mb={2}>interesses pessoais</Heading>
+            <Heading color='brand.100' fontWeight='light' as='h2' mb={2}>interesses pessoais</Heading>
             <Wrap spacing='15px'>
               <WrapItem>
                 <Interesse icon={IoMdMedical} title='Medicina' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />

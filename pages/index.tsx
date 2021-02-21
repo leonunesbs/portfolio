@@ -60,7 +60,7 @@ const Home: React.FC = () => {
             <Flex flexDir='column'>
               <DadosPessoais title='idade' dado='23 anos'/>
               <DadosPessoais title='whatsapp' dado='+55 86 9 8131 2488'/>
-              <DadosPessoais title='email' dado='leonunesbs@gmail.com'/>
+              <DadosPessoais title='email' dado='leonunesbs@gmail.com' isLink/>
             </Flex>
           </Flex>
           <Flex flexDir='column' flexGrow={1} mb={4}>

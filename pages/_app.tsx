@@ -2,13 +2,15 @@ import React from 'react';
 import type { AppProps /*, AppContext */ } from 'next/app'
 
 import { ChakraProvider } from "@chakra-ui/react"
+import { Global } from "@emotion/react"
 import theme from '../styles/theme';
-import Fonts from '../styles/fonts';
+
+import fontFace from '../styles/fontFace';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Fonts />
+      <Global styles={fontFace} />
       <Component {...pageProps} />
     </ChakraProvider>
   )

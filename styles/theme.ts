@@ -14,8 +14,8 @@ const colors = {
 }
 
 const fonts = {
-  heading: "Roboto, system-ui, sans-serif",
-  body: "All Round Gothic, system-ui, sans-serif",
+  heading: "Roboto",
+  body: "All Round Gothic",
   mono: "Menlo, monospace",
 }
 

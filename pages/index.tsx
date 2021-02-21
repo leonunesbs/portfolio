@@ -6,7 +6,7 @@ import { IoMdMedical } from "react-icons/io"
 import { SiDjango } from "react-icons/si"
 import { RiAdvertisementFill } from "react-icons/ri"
 import { GiSkills } from "react-icons/gi"
-import { AiOutlineAntDesign, AiOutlineInfoCircle } from "react-icons/ai"
+import { AiFillGithub, AiOutlineAntDesign, AiOutlineInfoCircle } from "react-icons/ai"
 import { HiOutlineLightBulb } from "react-icons/hi"
 import { FaLinkedinIn, FaWhatsapp, FaGamepad, FaReact } from "react-icons/fa"
 
@@ -39,6 +39,9 @@ const Home: React.FC = () => {
                 </Link>
                 <Link href='https://wa.me/5586981312488' isExternal>
                   <Icon as={FaWhatsapp} color='brand.100' w={[8, 10]} h={[8, 10]} _hover={{color:'brand.500'}}/>
+                </Link>
+                <Link href='https://github.com/leonunesbs' isExternal>
+                  <Icon as={AiFillGithub} color='brand.100' w={[8, 10]} h={[8, 10]} _hover={{color:'brand.500'}}/>
                 </Link>
               </Stack>
             </Flex>

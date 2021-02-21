@@ -9,7 +9,7 @@ interface InteresseProps extends FlexProps {
 
 const Interesse: React.FC<InteresseProps> = ({icon, title, ...rest}) => {
   return (
-    <Flex w='70px' h='70px' bgColor='brand.400' borderRadius='md' shadow='md' flexDir='column' align='center' justify='center' color='brand.100' {...rest}>
+    <Flex w='70px' h='70px' flexShrink={0} bgColor='brand.400' borderRadius='md' shadow='md' flexDir='column' align='center' justify='center' color='brand.100' {...rest}>
       <Icon as={icon} w={7} h={7}/>
       <Text fontSize={10} fontWeight={100}>{title}</Text>
     </Flex>

@@ -22,7 +22,7 @@ const Home: React.FC = () => {
         <title>Leonardo Nunes | Meu portfólio</title>
         <meta name="description" content="Seja bem vindo à minha página!"/>
       </Head>
-      <Flex bgColor='brand.400' h='100vh' align='center' flexDir='column'>
+      <Flex bgColor='brand.400' h='100vh' w='100vw' overflow='hidden' align='center' flexDir='column'>
         <Flex flexDir='column' align='center'>
             <Flex backgroundColor='rgb(18, 163, 58, 0.22)' w={['290px', '360px']} h={['290px', '360px']} borderRadius='full'  zIndex='100' justify='center' align='center'>
               <Image src='pp.jpg' alt='pp' boxSize={['260px', "330px"]} borderRadius='full' zIndex='100' borderColor='brand.500' borderWidth='25px' />
@@ -49,16 +49,16 @@ const Home: React.FC = () => {
       </Flex>
 
       
-      <Flex bgColor='brand.300' h='100vh' align='center' justify='space-around' flexDir='column' p={6}>
+      <Flex bgColor='brand.300' w='100vw' overflow='hidden' align='center' justify='space-around' flexDir='column' p={6} pr={[0, 6]}>
         <Flex flexDir='column' align='center'>
           <Icon as={AiOutlineInfoCircle} color='brand.100' w={12} h={12}/>
           <Heading color='brand.100'  as='h2' mb={6}>sobre mim</Heading>
-          <Text color='brand.100' textAlign='justify' fontWeight='light' mb={4}>
+          <Text color='brand.100' textAlign='justify' fontWeight='light' mb={4} pr={[6, 0]}>
           <span style={{color: '#12A33A'}}>Oi, me chamo Leonardo</span>. Sou acadêmico de medicina em estágio voluntário em UTI Covid-19, diretor de marketing na <Link color='brand.500' isExternal href='https://instagram.com/aaafuria'>@aaafuria</Link> e <Link color='brand.500' isExternal href='https://instagram.com/ladip.ufpi'>@ladip.ufp</Link>, desenvolvedor web full-stack, web design, UI-UX.
           </Text>
         </Flex>
         <Flex w='100%' wrap={['wrap', 'initial']} mb={4}>
-          <Flex flexDir='column' flexGrow={1} mb={4} minW='50%'>
+          <Flex flexDir='column'  mb={4}>
             <Heading color='brand.100' fontWeight='light' as='h2' mb={2}>dados pessoais</Heading>
             <Flex flexDir='column'>
               <DadosPessoais title='idade' dado='23 anos'/>
@@ -66,35 +66,40 @@ const Home: React.FC = () => {
               <DadosPessoais title='email' dado='leonunesbs@gmail.com' isLink/>
             </Flex>
           </Flex>
-          <Flex flexDir='column' flexGrow={1} mb={4}>
+          <Flex flexDir='column'  mb={4} w='100%'>
             <Heading color='brand.100' fontWeight='light' as='h2' mb={2}>interesses pessoais</Heading>
-            <Wrap spacing='15px'>
-              <WrapItem>
-                <Interesse icon={IoMdMedical} title='Medicina' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
-              </WrapItem>
-              <WrapItem>
-                <Interesse icon={RiAdvertisementFill} title='Maketing' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
-              </WrapItem>
-              <WrapItem>
-                <Interesse icon={HiOutlineLightBulb} title='Empreender' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
-              </WrapItem>
-              <WrapItem>
-                <Interesse icon={FaReact} title='ReactJS' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
-              </WrapItem>
-              <WrapItem>
-                <Interesse icon={AiOutlineAntDesign} title='Web design' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
-              </WrapItem>
-              <WrapItem>
-                <Interesse icon={FaGamepad} title='Games' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
-              </WrapItem>
-              <WrapItem>
-                <Interesse icon={SiDjango} title='Django' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
-              </WrapItem>
-            </Wrap>
+            <Stack overflow='auto' spacing='15px' isInline borderRadius='md'>
+              <Interesse icon={IoMdMedical} title='Medicina' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
+              <Interesse icon={RiAdvertisementFill} title='Maketing' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
+              <Interesse icon={HiOutlineLightBulb} title='Empreender' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
+              <Interesse icon={AiOutlineAntDesign} title='Web design' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
+              <Interesse icon={FaGamepad} title='Games' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
+              <Flex w={6}>&nbsp;</Flex>
+            </Stack>
+          </Flex>
+          <Flex flexDir='column' mb={4} w='100%'>
+            <Heading color='brand.100' fontWeight='light' as='h2' mb={2}>experiências</Heading>
+            <Stack overflow='auto' spacing='15px' isInline borderRadius='md'>
+              <Interesse icon={IoMdMedical} title='Medicina' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
+              <Interesse icon={RiAdvertisementFill} title='Maketing' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
+              <Interesse icon={HiOutlineLightBulb} title='Empreender' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
+              <Interesse icon={FaReact} title='ReactJS' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
+              <Interesse icon={AiOutlineAntDesign} title='Web design' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
+              <Interesse icon={FaGamepad} title='Games' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
+              <Interesse icon={SiDjango} title='Django' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
+              <Interesse icon={SiDjango} title='Django' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
+              <Interesse icon={SiDjango} title='Django' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
+              <Flex w={6}>&nbsp;</Flex>
+            </Stack>
           </Flex>
         </Flex>
         <Button href='http://lattes.cnpq.br/9059372127108730' target='_blank' borderRadius='md' size='lg' backgroundColor='brand.500' color='brand.100' _hover={{bgColor: 'brand.100', color: 'brand.500'}}>Acessar currículo <Icon ml='3px' as={FiExternalLink}/></Button>
       </Flex>
+
+
+
+
+
 
 
 

@@ -45,7 +45,7 @@ const Home: React.FC = () => {
         <Flex flexDir='column' align='center'>
           <Icon as={AiOutlineInfoCircle} color='brand.100' w={12} h={12}/>
           <Heading color='brand.100'  as='h2' mb={6}>sobre mim</Heading>
-          <Text color='brand.100' textAlign='justify' fontWeight={100} mb={4}>
+          <Text color='brand.100' textAlign='justify' fontWeight='light' mb={4}>
           <span style={{color: '#12A33A'}}>Oi, me chamo Leonardo</span>. Sou acadêmico de medicina em estágio voluntário em UTI Covid-19, diretor de marketing na <Link color='brand.500' isExternal href='https://instagram.com/aaafuria'>@aaafuria</Link> e <Link color='brand.500' isExternal href='https://instagram.com/ladip.ufpi'>@ladip.ufp</Link>, desenvolvedor web full-stack, web design, UI-UX.
           </Text>
         </Flex>

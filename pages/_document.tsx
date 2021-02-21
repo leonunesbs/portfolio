@@ -8,7 +8,6 @@ class Document extends NextDocument<Props> {
     return (
       <Html lang='pt-br'>
         <Head>
-          <link rel="stylesheet" href="https://use.typekit.net/scj3vjm.css" />
         </Head>
         <body>
           <Main />

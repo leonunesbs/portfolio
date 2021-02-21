@@ -16,7 +16,6 @@ const colors = {
 const fonts = {
   heading: "Roboto",
   body: "All Round Gothic"
-
 }
 
 const theme = extendTheme({ 

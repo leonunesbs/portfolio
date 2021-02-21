@@ -32,7 +32,7 @@ const Home: React.FC = () => {
                 <Link href='https://www.linkedin.com/in/leonardo-n-38001a100/' isExternal>
                   <Icon as={FaLinkedinIn} color='brand.100' w={[6, 10]} h={[6, 10]} _hover={{color:'brand.500'}}/>
                 </Link>
-                <Link href='https://https://wa.me/5586981312488' isExternal>
+                <Link href='https://wa.me/5586981312488' isExternal>
                   <Icon as={FaWhatsapp} color='brand.100' w={[6, 10]} h={[6, 10]} _hover={{color:'brand.500'}}/>
                 </Link>
               </Stack>

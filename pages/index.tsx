@@ -57,7 +57,7 @@ const Home: React.FC = () => {
           <span style={{color: '#12A33A'}}>Oi, me chamo Leonardo</span>. Sou acadêmico de medicina em estágio voluntário em UTI Covid-19, diretor de marketing na <Link color='brand.500' isExternal href='https://instagram.com/aaafuria'>@aaafuria</Link> e <Link color='brand.500' isExternal href='https://instagram.com/ladip.ufpi'>@ladip.ufp</Link>, desenvolvedor web full-stack, web design, UI-UX.
           </Text>
         </Flex>
-        <Flex w='100%' wrap={['wrap', 'initial']}>
+        <Flex w='100%' wrap={['wrap', 'initial']} mb={4}>
           <Flex flexDir='column' flexGrow={1} mb={4} minW='50%'>
             <Heading color='brand.100' fontWeight='light' as='h2' mb={2}>dados pessoais</Heading>
             <Flex flexDir='column'>

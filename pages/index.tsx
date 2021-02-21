@@ -13,7 +13,7 @@ import { FaLinkedinIn, FaWhatsapp, FaGamepad, FaReact } from "react-icons/fa"
 import Interesse from '../components/Interesse';
 import DadosPessoais from '../components/DadosPessoais';
 import Habilidade from '../components/Habilidade';
-import { Head } from 'next/head';
+import Head from 'next/head';
 
 const Home: React.FC = () => {
   return (

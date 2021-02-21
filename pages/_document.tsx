@@ -7,10 +7,7 @@ class Document extends NextDocument<Props> {
   render() {
     return (
       <Html lang='pt-br'>
-        <Head>
-          <title>Leonardo Nunes | Meu portfólio</title>
-          <meta name="description" content="Seja bem vindo à minha página!"/>
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />

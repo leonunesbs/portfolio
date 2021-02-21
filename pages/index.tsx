@@ -13,10 +13,15 @@ import { FaLinkedinIn, FaWhatsapp, FaGamepad, FaReact } from "react-icons/fa"
 import Interesse from '../components/Interesse';
 import DadosPessoais from '../components/DadosPessoais';
 import Habilidade from '../components/Habilidade';
+import { Head } from 'next/head';
 
 const Home: React.FC = () => {
   return (
     <>
+      <Head>
+        <title>Leonardo Nunes | Meu portfólio</title>
+        <meta name="description" content="Seja bem vindo à minha página!"/>
+      </Head>
       <Flex bgColor='brand.400' h='100vh' align='center' flexDir='column'>
         <Flex flexDir='column' align='center'>
             <Flex backgroundColor='rgb(18, 163, 58, 0.22)' w={['290px', '360px']} h={['290px', '360px']} borderRadius='full'  zIndex='100' justify='center' align='center'>
@@ -85,7 +90,7 @@ const Home: React.FC = () => {
             </Wrap>
           </Flex>
         </Flex>
-        <Button as='a' href='http://lattes.cnpq.br/9059372127108730' target='_blank' borderRadius='md' size='lg' backgroundColor='brand.500' color='brand.100' _hover={{bgColor: 'brand.100', color: 'brand.500'}}>Acessar currículo <Icon ml='3px' as={FiExternalLink}/></Button>
+        <Button href='http://lattes.cnpq.br/9059372127108730' target='_blank' borderRadius='md' size='lg' backgroundColor='brand.500' color='brand.100' _hover={{bgColor: 'brand.100', color: 'brand.500'}}>Acessar currículo <Icon ml='3px' as={FiExternalLink}/></Button>
       </Flex>
 
 

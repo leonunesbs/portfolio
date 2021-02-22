@@ -68,7 +68,7 @@ const Home: React.FC = () => {
             </Flex>
           </Flex>
           <Flex flexDir='column'>
-            <Flex flexDir='column'  mb={4}>
+            <Flex flexDir='column'  mb={4} w='100%'>
               <Heading color='brand.100' fontWeight='light' as='h2' mb={2}>interesses pessoais</Heading>
               <Stack overflowX='auto' spacing='15px' isInline borderRadius='md'>
                 <Interesse icon={IoMdMedical} title='Medicina' _hover={{bgColor: 'brand.100', color: 'brand.500'}} />
@@ -79,7 +79,7 @@ const Home: React.FC = () => {
                 <Flex w={6}>&nbsp;</Flex>
               </Stack>
             </Flex>
-            <Flex flexDir='column' mb={4}>
+            <Flex flexDir='column' mb={4} w='100%'>
               <Heading color='brand.100' fontWeight='light' as='h2' mb={2}>experiências</Heading>
               <Stack overflow='auto' spacing='15px' isInline borderRadius='md'>
                 <Experiência color='brand.100' _hover={{bgColor: 'brand.100', color: 'brand.500'}}>

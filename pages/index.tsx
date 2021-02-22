@@ -95,7 +95,7 @@ const Home: React.FC = () => {
             </Flex>
           </Flex>
         </Flex>
-        <Button href='http://lattes.cnpq.br/9059372127108730' mb={6} target='_blank' borderRadius='md' size='lg' backgroundColor='brand.500' color='brand.100' _hover={{bgColor: 'brand.100', color: 'brand.500'}}>Acessar currículo <Icon ml='3px' as={FiExternalLink}/></Button>
+        <Button as='a' href='http://lattes.cnpq.br/9059372127108730' mb={6} target='_blank' borderRadius='md' size='lg' backgroundColor='brand.500' color='brand.100' _hover={{bgColor: 'brand.100', color: 'brand.500'}}>Acessar currículo <Icon ml='3px' as={FiExternalLink}/></Button>
       </Flex>
 
 

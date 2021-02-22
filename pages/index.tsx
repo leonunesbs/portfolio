@@ -3,7 +3,6 @@ import { Flex, Stack, Heading, Text, Link, Image, Wrap, WrapItem, Button } from 
 import { Icon } from "@chakra-ui/react"
 import { FiInstagram, FiExternalLink } from "react-icons/fi"
 import { IoMdMedical } from "react-icons/io"
-import { SiDjango } from "react-icons/si"
 import { RiAdvertisementFill } from "react-icons/ri"
 import { GiSkills } from "react-icons/gi"
 import { AiFillGithub, AiOutlineAntDesign, AiOutlineInfoCircle } from "react-icons/ai"
@@ -15,7 +14,7 @@ import DadosPessoais from '../components/DadosPessoais';
 import Habilidade from '../components/Habilidade';
 import Head from 'next/head';
 import Experiência from '../components/Experiencia';
-import LadipIcon from '../components/LADIPIcon';
+import LadipIcon from '../components/LadipIcon';
 
 const Home: React.FC = () => {
   return (

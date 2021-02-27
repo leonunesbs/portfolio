@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef, useEffect, useState } from 'react'
 import {
   Flex,
   Text,
@@ -6,8 +6,12 @@ import {
   Heading,
   Link,
   Stack,
-  Button
+  Button,
+  FlexProps,
+  ResponsiveValue
 } from '@chakra-ui/react'
+import { useScrollYPosition } from 'react-use-scroll-position'
+
 import { AiOutlineInfoCircle, AiOutlineAntDesign } from 'react-icons/ai'
 import { FaGamepad } from 'react-icons/fa'
 import { FiExternalLink } from 'react-icons/fi'
@@ -19,12 +23,27 @@ import Experiência from '../components/Experiencia'
 import FúriaIcon from '../components/FúriaIcon'
 import Interesse from '../components/Interesse'
 import LadipIcon from '../components/LadipIcon'
+import { ScrollProps } from '.'
+import { time } from 'console'
 
 // import { Container } from './styles';
 
-const Sobre: React.FC = () => {
+interface SobreProps extends ScrollProps, FlexProps {}
+
+const Sobre: React.ForwardRefRenderFunction<HTMLDivElement, SobreProps> = (
+  props,
+  ref
+) => {
+  const scrollY = useScrollYPosition()
+  const [scrollOpacity, setScrollOpacity] = useState(0)
+
+  useEffect(() => {
+    setTimeout(() => setScrollOpacity((scrollY - 125) / 325), 150)
+  }, [scrollY])
+
   return (
     <Flex
+      ref={ref}
       bgColor="brand.300"
       overflow="hidden"
       minH="100vh"
@@ -32,7 +51,13 @@ const Sobre: React.FC = () => {
       justify="space-around"
       flexDir="column"
     >
-      <Flex flexDir="column" align="center" mt={6} mb={4}>
+      <Flex
+        opacity={scrollOpacity}
+        flexDir="column"
+        align="center"
+        mt={6}
+        mb={4}
+      >
         <Icon as={AiOutlineInfoCircle} color="brand.100" w={12} h={12} />
         <Heading color="brand.100" as="h2" mb={6}>
           sobre mim
@@ -59,7 +84,7 @@ const Sobre: React.FC = () => {
           , desenvolvedor web full-stack, web design, UI-UX.
         </Text>
       </Flex>
-      <Flex wrap={['wrap', 'initial']} mb={4} w="100%">
+      <Flex opacity={scrollOpacity} wrap={['wrap', 'initial']} mb={4} w="100%">
         <Flex flexDir="column" mb={4} minW="50%" px={6}>
           <Heading color="brand.100" fontWeight="light" as="h2" mb={2}>
             dados pessoais
@@ -157,4 +182,4 @@ const Sobre: React.FC = () => {
   )
 }
 
-export default Sobre
+export default forwardRef(Sobre)

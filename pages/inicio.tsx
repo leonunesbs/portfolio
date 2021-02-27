@@ -6,17 +6,24 @@ import {
   Image,
   Link,
   Text,
-  Icon
+  Icon,
+  FlexProps
 } from '@chakra-ui/react'
-import React from 'react'
-import { AiFillGithub } from 'react-icons/ai'
+import React, { forwardRef } from 'react'
+import { AiFillGithub, AiFillCaretDown } from 'react-icons/ai'
 import { FaLinkedinIn, FaWhatsapp } from 'react-icons/fa'
 import { FiInstagram } from 'react-icons/fi'
-import { InstagramUserProps } from '.'
+import { InstagramUserProps, ScrollProps } from '.'
 
-const Início: React.FC<InstagramUserProps> = ({ user }) => {
+interface InícioProps extends InstagramUserProps, ScrollProps {}
+
+const Início: React.ForwardRefRenderFunction<HTMLDivElement, InícioProps> = (
+  { user, scrollTo },
+  ref
+) => {
   return (
     <Flex
+      ref={ref}
       bgColor="brand.400"
       minH="100vh"
       overflow="hidden"
@@ -34,7 +41,7 @@ const Início: React.FC<InstagramUserProps> = ({ user }) => {
           align="center"
         >
           <Image
-            src={user.profile_pic_url}
+            src="pp.jpg"
             alt="pp"
             boxSize={['260px', '330px']}
             borderRadius="full"
@@ -132,8 +139,18 @@ const Início: React.FC<InstagramUserProps> = ({ user }) => {
           </Stack>
         </Flex>
       </Flex>
+      <Flex
+        flexGrow={1}
+        align="flex-end"
+        p={8}
+        color="brand.500"
+        cursor="pointer"
+        onClick={() => scrollTo('sobre')}
+      >
+        <Icon as={AiFillCaretDown} w={6} h={6} color="brand.500" />
+      </Flex>
     </Flex>
   )
 }
 
-export default Início
+export default forwardRef(Início)

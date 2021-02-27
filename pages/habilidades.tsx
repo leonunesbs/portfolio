@@ -1,13 +1,18 @@
 import React from 'react'
-import { Flex, Icon, Heading } from '@chakra-ui/react'
+import { Flex, Icon, Heading, forwardRef, FlexProps } from '@chakra-ui/react'
 import { GiSkills } from 'react-icons/gi'
 import Habilidade from '../components/Habilidade'
+import { ScrollProps } from '.'
 
 // import { Container } from './styles';
 
-const Habilidades: React.FC = () => {
+const Habilidades: React.ForwardRefRenderFunction<
+  HTMLDivElement,
+  ScrollProps
+> = (props, ref) => {
   return (
     <Flex
+      ref={ref}
       bgColor="brand.400"
       minH="100vh"
       align="center"
@@ -51,4 +56,4 @@ const Habilidades: React.FC = () => {
   )
 }
 
-export default Habilidades
+export default forwardRef(Habilidades)

@@ -67,7 +67,7 @@ const Início: React.ForwardRefRenderFunction<HTMLDivElement, InícioProps> = (
           <Heading color="brand.100" as="h1" fontWeight="ligth">
             LEONARDO NUNES
           </Heading>
-          <Text color="brand.500" as="h4">
+          <Text color="brand.500" as="h2">
             acadêmico de medicina
           </Text>
           <Stack flexGrow={1} align="center" isInline spacing={8}>

@@ -142,11 +142,15 @@ const Início: React.ForwardRefRenderFunction<HTMLDivElement, InícioProps> = (
       <Flex
         flexGrow={1}
         align="center"
-        color="brand.500"
+        justify="center"
         cursor="pointer"
+        flexDir="column"
         onClick={() => scrollTo('sobre')}
+        color="brand.500"
+        _hover={{ color: 'brand.200' }}
       >
-        <Icon as={AiFillCaretDown} w={6} h={6} color="brand.500" />
+        mais
+        <Icon as={AiFillCaretDown} w={6} h={6} />
       </Flex>
     </Flex>
   )

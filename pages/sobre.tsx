@@ -167,7 +167,7 @@ const Sobre: React.ForwardRefRenderFunction<HTMLDivElement, SobreProps> = (
       </Flex>
       <Button
         as="a"
-        href="http://lattes.cnpq.br/9059372127108730"
+        href="https://lattes.cnpq.br/9059372127108730"
         mb={6}
         target="_blank"
         borderRadius="md"

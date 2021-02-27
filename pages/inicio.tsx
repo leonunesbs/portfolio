@@ -141,8 +141,7 @@ const Início: React.ForwardRefRenderFunction<HTMLDivElement, InícioProps> = (
       </Flex>
       <Flex
         flexGrow={1}
-        align="flex-end"
-        p={8}
+        align="center"
         color="brand.500"
         cursor="pointer"
         onClick={() => scrollTo('sobre')}

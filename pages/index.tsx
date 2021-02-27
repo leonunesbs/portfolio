@@ -1,11 +1,10 @@
 // eslint-disable-next-line no-use-before-define
 import React, { useEffect, useRef } from 'react'
 import Head from 'next/head'
-import { GetStaticProps } from 'next'
-import { ApiResponse, create } from 'apisauce'
 import Início from './inicio'
 import Sobre from './sobre'
 import Habilidades from './habilidades'
+import Música from './musica'
 
 export interface InstagramUserProps {
   user: {
@@ -24,6 +23,7 @@ const Home: React.FC<InstagramUserProps> = ({ user }) => {
   const inícioRef = useRef<HTMLDivElement>(null)
   const sobreRef = useRef<HTMLDivElement>(null)
   const habilidadesRef = useRef<HTMLDivElement>(null)
+  const músicaRef = useRef<HTMLDivElement>(null)
 
   const scrollTo = (section: string) => {
     const sections = {
@@ -46,6 +46,7 @@ const Home: React.FC<InstagramUserProps> = ({ user }) => {
       <Início ref={inícioRef} scrollTo={scrollTo} user={user} />
       <Sobre ref={sobreRef} scrollTo={scrollTo} />
       <Habilidades ref={habilidadesRef} scrollTo={scrollTo} />
+      <Música ref={músicaRef} scrollTo={scrollTo} />
     </>
   )
 }

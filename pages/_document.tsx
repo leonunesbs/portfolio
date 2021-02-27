@@ -9,7 +9,7 @@ class Document extends NextDocument<Props> {
     return (
       <Html lang="pt-br">
         <Head>
-          <meta name="application-name" content="Portfolio" />
+          <meta name="application-name" content="Meu Portfolio" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
             name="apple-mobile-web-app-status-bar-style"

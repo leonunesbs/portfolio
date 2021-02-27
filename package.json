@@ -12,6 +12,7 @@
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",
     "@types/react-icons": "^3.0.0",
+    "apisauce": "^2.0.1",
     "framer-motion": "^3.6.2",
     "next": "10.0.7",
     "react": "17.0.1",

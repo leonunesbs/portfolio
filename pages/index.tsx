@@ -8,7 +8,8 @@ import {
   Link,
   Image,
   Button,
-  Icon
+  Icon,
+  Tooltip
 } from '@chakra-ui/react'
 
 import { FiInstagram, FiExternalLink } from 'react-icons/fi'
@@ -30,8 +31,19 @@ import Head from 'next/head'
 import Experiência from '../components/Experiencia'
 import LadipIcon from '../components/LadipIcon'
 import FúriaIcon from '../components/FúriaIcon'
+import { GetStaticProps } from 'next'
+import { ApiResponse, create } from 'apisauce'
 
-const Home: React.FC = () => {
+interface InstagramUserProps {
+  user: {
+    username: string
+    pk: number
+    profile_pic_url: string
+    status: string
+  }
+}
+
+const Home: React.FC<InstagramUserProps> = ({ user }) => {
   return (
     <>
       <Head>
@@ -40,7 +52,7 @@ const Home: React.FC = () => {
       </Head>
       <Flex
         bgColor="brand.400"
-        h="100vh"
+        minH="100vh"
         overflow="hidden"
         align="center"
         flexDir="column"
@@ -56,7 +68,7 @@ const Home: React.FC = () => {
             align="center"
           >
             <Image
-              src="pp.jpg"
+              src={user.profile_pic_url}
               alt="pp"
               boxSize={['260px', '330px']}
               borderRadius="full"
@@ -86,45 +98,76 @@ const Home: React.FC = () => {
               acadêmico de medicina
             </Text>
             <Stack flexGrow={1} align="center" isInline spacing={8}>
-              <Link href="https://instagram.com/leonunesbs" isExternal>
-                <Icon
-                  as={FiInstagram}
-                  color="brand.100"
-                  w={[8, 10]}
-                  h={[8, 10]}
-                  _hover={{ color: 'brand.500' }}
-                />
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/leonardo-n-38001a100/"
-                isExternal
+              <Tooltip
+                hasArrow
+                label="@leonunesbs"
+                aria-label="instagram"
+                bg="brand.500"
               >
-                <Icon
-                  as={FaLinkedinIn}
-                  color="brand.100"
-                  w={[8, 10]}
-                  h={[8, 10]}
-                  _hover={{ color: 'brand.500' }}
-                />
-              </Link>
-              <Link href="https://wa.me/5586981312488" isExternal>
-                <Icon
-                  as={FaWhatsapp}
-                  color="brand.100"
-                  w={[8, 10]}
-                  h={[8, 10]}
-                  _hover={{ color: 'brand.500' }}
-                />
-              </Link>
-              <Link href="https://github.com/leonunesbs" isExternal>
-                <Icon
-                  as={AiFillGithub}
-                  color="brand.100"
-                  w={[8, 10]}
-                  h={[8, 10]}
-                  _hover={{ color: 'brand.500' }}
-                />
-              </Link>
+                <Link href="https://instagram.com/leonunesbs" isExternal>
+                  <Icon
+                    as={FiInstagram}
+                    color="brand.100"
+                    w={[8, 10]}
+                    h={[8, 10]}
+                    _hover={{ color: 'brand.500' }}
+                  />
+                </Link>
+              </Tooltip>
+
+              <Tooltip
+                hasArrow
+                label="LinkedIn"
+                aria-label="linkedin"
+                bg="brand.500"
+              >
+                <Link
+                  href="https://www.linkedin.com/in/leonardo-n-38001a100/"
+                  isExternal
+                >
+                  <Icon
+                    as={FaLinkedinIn}
+                    color="brand.100"
+                    w={[8, 10]}
+                    h={[8, 10]}
+                    _hover={{ color: 'brand.500' }}
+                  />
+                </Link>
+              </Tooltip>
+
+              <Tooltip
+                hasArrow
+                label="Whatsapp"
+                aria-label="whatsapp"
+                bg="brand.500"
+              >
+                <Link href="https://wa.me/5586981312488" isExternal>
+                  <Icon
+                    as={FaWhatsapp}
+                    color="brand.100"
+                    w={[8, 10]}
+                    h={[8, 10]}
+                    _hover={{ color: 'brand.500' }}
+                  />
+                </Link>
+              </Tooltip>
+
+              <Tooltip
+                hasArrow
+                label="Github"
+                aria-label="github"
+                bg="brand.500"
+              >
+                <Link href="https://github.com/leonunesbs" isExternal>
+                  <Icon
+                    as={AiFillGithub}
+                    color="brand.100"
+                    w={[8, 10]}
+                    h={[8, 10]}
+                    _hover={{ color: 'brand.500' }}
+                  />
+                </Link>
+              </Tooltip>
             </Stack>
           </Flex>
         </Flex>
@@ -133,6 +176,7 @@ const Home: React.FC = () => {
       <Flex
         bgColor="brand.300"
         overflow="hidden"
+        minH="100vh"
         align="center"
         justify="space-around"
         flexDir="column"
@@ -274,6 +318,7 @@ const Home: React.FC = () => {
 
       <Flex
         bgColor="brand.400"
+        minH="100vh"
         align="center"
         justify="space-around"
         flexDir="column"
@@ -314,6 +359,26 @@ const Home: React.FC = () => {
       </Flex>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const api = create({
+    baseURL: 'https://i.instagram.com/api/v1/',
+    headers: {
+      'User-Agent':
+        'Mozilla/5.0 (iPhone; CPU iPhone OS 12_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Instagram 105.0.0.11.118 (iPhone11,8; iOS 12_3_1; en_US; en-US; scale=2.00; 828x1792; 165586599)'
+    }
+  })
+
+  const response: ApiResponse<InstagramUserProps> = await api.get(
+    'users/225476968/info/'
+  )
+
+  return {
+    props: {
+      user: response.data.user
+    }
+  }
 }
 
 export default Home

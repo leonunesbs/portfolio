@@ -17,8 +17,12 @@ const FloatMenu: React.FC<FloatMenuProps> = ({ scrollTo, active }) => {
       zIndex={150}
       flexDir="column"
       color="brand.200"
-      opacity={0.2}
-      _hover={{ opacity: 1 }}
+      borderRadius="md"
+      shadow="md"
+      p={2}
+      backgroundColor="brand.400"
+      opacity={0.03}
+      _hover={{ opacity: 0.98 }}
     >
       {menuItens.map(item => (
         <Flex

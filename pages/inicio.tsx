@@ -66,7 +66,7 @@ const Início: React.FC<InstagramUserProps> = ({ user }) => {
           <Stack flexGrow={1} align="center" isInline spacing={8}>
             <Tooltip
               hasArrow
-              label="@leonunesbs"
+              label="Instagram"
               aria-label="instagram"
               bg="brand.500"
             >

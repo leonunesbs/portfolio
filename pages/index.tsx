@@ -1,36 +1,6 @@
 // eslint-disable-next-line no-use-before-define
 import React from 'react'
-import {
-  Flex,
-  Stack,
-  Heading,
-  Text,
-  Link,
-  Image,
-  Button,
-  Icon,
-  Tooltip
-} from '@chakra-ui/react'
-
-import { FiInstagram, FiExternalLink } from 'react-icons/fi'
-import { IoMdMedical } from 'react-icons/io'
-import { RiAdvertisementFill } from 'react-icons/ri'
-import { GiSkills } from 'react-icons/gi'
-import {
-  AiFillGithub,
-  AiOutlineAntDesign,
-  AiOutlineInfoCircle
-} from 'react-icons/ai'
-import { HiOutlineLightBulb } from 'react-icons/hi'
-import { FaLinkedinIn, FaWhatsapp, FaGamepad } from 'react-icons/fa'
-
-import Interesse from '../components/Interesse'
-import DadosPessoais from '../components/DadosPessoais'
-import Habilidade from '../components/Habilidade'
 import Head from 'next/head'
-import Experiência from '../components/Experiencia'
-import LadipIcon from '../components/LadipIcon'
-import FúriaIcon from '../components/FúriaIcon'
 import { GetStaticProps } from 'next'
 import { ApiResponse, create } from 'apisauce'
 import Início from './inicio'
@@ -75,7 +45,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      user: response.data.user
+      user: response.data.user || {
+        profile_pic_url: ''
+      }
     }
   }
 }

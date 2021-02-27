@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-use-before-define
-import React from 'react'
+import React, { useEffect } from 'react'
 import type { AppProps /*, AppContext */ } from 'next/app'
 
 import { ChakraProvider } from '@chakra-ui/react'
@@ -10,6 +10,23 @@ import fontFace from '../styles/fontFace'
 import Head from 'next/head'
 
 function MyApp({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js').then(
+          function (registration) {
+            console.log(
+              'Service Worker registration successful with scope: ',
+              registration.scope
+            )
+          },
+          function (err) {
+            console.log('Service Worker registration failed: ', err)
+          }
+        )
+      })
+    }
+  }, [])
   return (
     <>
       <Head>

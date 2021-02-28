@@ -13,7 +13,7 @@ import React, { forwardRef } from 'react'
 import { AiFillGithub, AiFillCaretDown } from 'react-icons/ai'
 import { FaLinkedinIn, FaWhatsapp } from 'react-icons/fa'
 import { FiInstagram } from 'react-icons/fi'
-import { InstagramUserProps, ScrollProps } from '.'
+import { InstagramUserProps, ScrollProps } from './'
 
 interface InícioProps extends InstagramUserProps, ScrollProps {}
 

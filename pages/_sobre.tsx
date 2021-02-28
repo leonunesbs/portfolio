@@ -38,7 +38,7 @@ const Sobre: React.ForwardRefRenderFunction<HTMLDivElement, SobreProps> = (
   const [scrollOpacity, setScrollOpacity] = useState(0)
 
   useEffect(() => {
-    setTimeout(() => setScrollOpacity((scrollY - 125) / 380), 150)
+    setTimeout(() => setScrollOpacity((scrollY - 125) / 380), 100)
   }, [scrollY])
 
   return (

@@ -1,12 +1,11 @@
 // eslint-disable-next-line no-use-before-define
 import React, { useEffect, useRef, useState } from 'react'
 import Head from 'next/head'
-import Início from './inicio'
-import Sobre from './sobre'
-import Habilidades from './habilidades'
-import Música from './musica'
+import Início from './_inicio'
+import Sobre from './_sobre'
+import Habilidades from './_habilidades'
+import Música from './_musica'
 import { useRouter } from 'next/dist/client/router'
-import { Flex, Link, Text } from '@chakra-ui/react'
 import FloatMenu from '../components/FloatMenu'
 import { useScrollYPosition } from 'react-use-scroll-position'
 

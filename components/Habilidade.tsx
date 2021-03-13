@@ -22,7 +22,7 @@ const Habilidade: React.FC<HabilidadeProps> = ({ skill, value }) => {
         <SliderTrack bg="brand.300">
           <SliderFilledTrack bg="brand.500" />
         </SliderTrack>
-        <SliderThumb boxSize={6} fontSize={8}>
+        <SliderThumb boxSize={[6, 8]} fontSize={[10, 14]}>
           {value}%
         </SliderThumb>
       </Slider>

@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-use-before-define
 import React, { useEffect } from 'react'
-import type { AppProps /*, AppContext */ } from 'next/app'
+import type { AppProps } from 'next/app'
 
 import { ChakraProvider } from '@chakra-ui/react'
 import { Global } from '@emotion/react'

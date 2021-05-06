@@ -1,6 +1,6 @@
 {
-    "name": "leonunesbs",
-    "short_name": "leonunesbs",
+    "name": "leonunesbsPortfolio",
+    "short_name": "leonunesbsPortfolio",
     "icons": [
         {
             "src": "/favicon/android-chrome-192x192.png",
@@ -15,6 +15,6 @@
     ],
     "theme_color": "#12a33a",
     "background_color": "#12a33a",
-    "start_url": "https://leonunesbs.vercel.app",
+    "start_url": "https://portfolio.leonunesbs.com.br",
     "display": "standalone"
 }

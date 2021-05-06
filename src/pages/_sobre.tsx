@@ -115,7 +115,7 @@ const Sobre: React.ForwardRefRenderFunction<HTMLDivElement, SobreProps> = (
               />
               <Interesse
                 icon={RiAdvertisementFill}
-                title="Maketing"
+                title="Marketing"
                 _hover={{ bgColor: 'brand.100', color: 'brand.500' }}
               />
               <Interesse
